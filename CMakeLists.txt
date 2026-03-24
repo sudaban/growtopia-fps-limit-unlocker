@@ -15,8 +15,10 @@ add_subdirectory(external/minhook)
 
 # Create shared library (DLL)
 add_library(${PROJECT_NAME} SHARED
-    src/fps.c
-	src/utils.c
+	src/fps.c
+    src/utils.c
+    src/dllmain.c
+    src/dinput8.def
 )
 
 # Set output DLL name to dinput8.dll
