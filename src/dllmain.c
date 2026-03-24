@@ -59,19 +59,19 @@ void setup(void)
 
     if (!fix_nt_protect_virtual_memory_if_needed())
     {
-        show_error_message_box("Failed to patch NtProtectVirtualMemory. Please report this issue on GitHub.");
+        show_error_message_box("Failed to patch NtProtectVirtualMemory.");
         return;
     }
 
     if (MH_Initialize() != MH_OK)
     {
-        show_error_message_box("Failed to initialize MinHook. Please report this issue on GitHub.");
+        show_error_message_box("Failed to initialize MinHook.");
         return;
     }
 
     if (!hook_set_fps_limit())
     {
-        show_error_message_box("Failed to hook SetFPSLimit. Please report this issue on GitHub.");
+        show_error_message_box("Failed to hook set_fps_limit.");
         return;
     }
 
@@ -125,7 +125,7 @@ HRESULT WINAPI DirectInput8Create(HINSTANCE hinst, DWORD dwversion, REFIID riidl
 
     if (!g_original_direct_input8_create)
     {
-        show_error_message_box("Failed to load original DirectInput8Create function. Please report this issue on GitHub.");
+        show_error_message_box("Failed to load original DirectInput8Create function.");
         return E_FAIL;
     }
     return g_original_direct_input8_create(hinst, dwversion, riidltf, ppvout, punkouter);
