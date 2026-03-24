@@ -11,7 +11,7 @@ if(NOT MSVC)
 endif()
 
 # Add MinHook library from subdirectory
-add_subdirectory(vendor/minhook)
+add_subdirectory(external/minhook)
 
 # Create shared library (DLL)
 add_library(${PROJECT_NAME} SHARED
